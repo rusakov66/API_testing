@@ -14,11 +14,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-
-// This is one test branch
-
 public class GetRequestFromGithubTestForJunit5 {
-
 
     @Test
     public void getRequestFromGithubTest() throws ParseException {
@@ -62,7 +58,6 @@ public class GetRequestFromGithubTestForJunit5 {
         String gravatar_id = jsonResponse.getString("gravatar_id");
         String avatar_url = jsonResponse.getString("avatar_url");
 
-
         assertAll(
                 () -> assertThat("rusakov66", is(login)),
                 () -> assertThat("Iurii Rusakov", is(name)),
@@ -95,7 +90,6 @@ public class GetRequestFromGithubTestForJunit5 {
                 () -> assertThat(id, equalTo(16705398)),
                 () -> assertThat(created_at, is("2016-01-14T15:18:18Z")),
                 () -> assertThat(updated_at, greaterThan("2016-05-21T08:12:28Z")),
-                () -> System.out.println(gravatar_id),
                 () -> assertThat(avatar_url, is("https://avatars1.githubusercontent.com/u/16705398?v=4"))
         );
     }
